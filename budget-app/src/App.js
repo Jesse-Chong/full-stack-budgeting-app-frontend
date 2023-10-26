@@ -5,6 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import ShowTransaction from "./components/ShowTransaction";
 import NewTransactionEntry from "./components/NewTransactionEntry";
+import EditTransactionEntry from "./components/EditTransactionEntry";
 
 
 function App() {
@@ -31,6 +32,7 @@ function App() {
             <Route path="/transactions" element={<TransactionIndex/>} />
             <Route path="/transactions/:id" element={<ShowTransaction/>} />
             <Route path="/transactions/new" element={<NewTransactionEntry />} />
+            <Route path="/transactions/:id/edit" element={<EditTransactionEntry />} />
           </Routes>
       </div>
     </Router>

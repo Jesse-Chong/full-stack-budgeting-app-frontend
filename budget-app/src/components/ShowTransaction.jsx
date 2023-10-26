@@ -32,6 +32,7 @@ export default function ShowTransaction() {
                 <p>{date}</p>
                 <p>{from}</p>
                 <button onClick={() => navigate('/transactions')}>Back</button>
+                <button onClick={() => navigate(`/transactions/${id}/edit`)}>Edit</button>
                 </>
             )}
             </div>

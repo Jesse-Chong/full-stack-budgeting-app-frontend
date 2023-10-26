@@ -33,10 +33,10 @@ export default function NewTransactionEntry() {
 
         navigate(`/transactions/${newItemId}`);
       } else {
-        console.error("Log entry creation failed:", response.status);
+        console.error("Transaction entry creation failed:", response.status);
       }
     } catch (error) {
-      console.error("Error while creating log entry:", error);
+      console.error("Error while creating transaction:", error);
     }
   };
 
