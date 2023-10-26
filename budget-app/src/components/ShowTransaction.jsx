@@ -6,6 +6,7 @@ export default function ShowTransaction() {
     const { item_name, amount, date, from } = transactionsData || {};
     const navigate = useNavigate();
     const { id } = useParams();
+    console.log("ID Parameter:", id);
 
     useEffect(() => {
         const fetchTransactionData = async () => {

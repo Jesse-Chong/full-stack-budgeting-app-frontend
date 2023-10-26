@@ -9,7 +9,7 @@ export default function TransactionIndex() {
 
     useEffect(() => {
         try {
-          fetch(`${apiUrl}`)
+          fetch(`${apiUrl}/transactions`)
             .then((res) => {
               if (!res.ok) {
                 throw new Error(`Request failed with status: ${res.status}`);

@@ -1,9 +1,10 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, NavLink } from "react-router-dom";
 import TransactionIndex from "./components/TransactionsIndex";
 import { Navbar, Nav } from "react-bootstrap";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import ShowTransaction from "./components/ShowTransaction";
+import NewTransactionEntry from "./components/NewTransactionEntry";
 
 
 function App() {
@@ -16,9 +17,11 @@ function App() {
           variant="dark"
           >
             <Nav>
-              <Nav.Link href="/transactions">Transactions</Nav.Link>
+              <Nav.Link href="/transactions/new">New Entry</Nav.Link>
             </Nav>
-            <Navbar.Brand>Budget App</Navbar.Brand>
+            <Navbar.Brand as={NavLink} to="/transactions">
+              Budget App
+            </Navbar.Brand>
             <Nav>
               <Nav.Link href="/transactions/statistics">Statistics</Nav.Link>
             </Nav>
@@ -27,6 +30,7 @@ function App() {
             <Route path='/' element={<TransactionIndex />} />
             <Route path="/transactions" element={<TransactionIndex/>} />
             <Route path="/transactions/:id" element={<ShowTransaction/>} />
+            <Route path="/transactions/new" element={<NewTransactionEntry />} />
           </Routes>
       </div>
     </Router>
