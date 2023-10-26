@@ -60,7 +60,7 @@ export default function NewTransactionEntry() {
             <input
               id="amount"
               value={formTransactionData.title}
-              type="text"
+              type="number"
               onChange={handleTextChange}
               placeholder="amount"
               required
@@ -70,7 +70,7 @@ export default function NewTransactionEntry() {
             <input
               id="date"
               value={formTransactionData.date}
-              type="text"
+              type="number"
               onChange={handleTextChange}
               placeholder="date"
               required
