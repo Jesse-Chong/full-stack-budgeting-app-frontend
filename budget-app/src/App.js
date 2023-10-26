@@ -1,8 +1,9 @@
-import { BrowserRouter as Router } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import TransactionIndex from "./components/TransactionsIndex";
 import { Navbar, Nav } from "react-bootstrap";
-import "bootstrap/dist/css/bootstrap.css";
-
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
+import ShowTransaction from "./components/ShowTransaction";
 
 
 function App() {
@@ -22,6 +23,11 @@ function App() {
               <Nav.Link href="/transactions/statistics">Statistics</Nav.Link>
             </Nav>
           </Navbar>
+          <Routes>
+            <Route path='/' element={<TransactionIndex />} />
+            <Route path="/transactions" element={<TransactionIndex/>} />
+            <Route path="/transactions/:id" element={<ShowTransaction/>} />
+          </Routes>
       </div>
     </Router>
   );
