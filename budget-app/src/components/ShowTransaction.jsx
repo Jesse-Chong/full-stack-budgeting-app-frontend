@@ -1,6 +1,22 @@
 import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 
+const deleteTransaction = async (id) => {
+    try {
+      const response = await fetch(`http://localhost:1111/transactions/${id}`, {
+        method: "DELETE",
+      });
+      if (!response.ok) {
+        console.error("Error deleting transaction");
+      } else {
+        console.log("Transaction deletion completed:", response.status);
+      }
+    } catch (err) {
+      console.error("Error while deleting transaction:", err);
+    }
+  };
+  
+
 export default function ShowTransaction() {
     const [transactionsData, setTransactionsData] = useState(null);
     const { item_name, amount, date, from } = transactionsData || {};
@@ -20,6 +36,11 @@ export default function ShowTransaction() {
         };
         fetchTransactionData();
     }, [id]);
+    
+      const handleDelete = async () => {
+        await deleteTransaction(id);
+        navigate("/transactions");
+      };
 
     return (
         <>
@@ -32,6 +53,7 @@ export default function ShowTransaction() {
                 <p>{date}</p>
                 <p>{from}</p>
                 <button onClick={() => navigate('/transactions')}>Back</button>
+                <button onClick={handleDelete}>Complete Erasure</button>
                 <button onClick={() => navigate(`/transactions/${id}/edit`)}>Edit</button>
                 </>
             )}
