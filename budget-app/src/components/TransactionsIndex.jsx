@@ -1,7 +1,15 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { Table, Container } from "react-bootstrap";
 import './TransactionIndex.css'
 const apiUrl = 'http://localhost:1111';
+
+function capitalizeWords(string) {
+  return string
+    .split(' ')
+    .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(' ');
+}
 
 export default function TransactionIndex() {
     const [transactionsData, setTransactionsData] = useState([]);
@@ -44,21 +52,39 @@ export default function TransactionIndex() {
   
 
 
-      return (
-        <>
-         <div className={totalClass}>
-        <h1>Bank Account Total: {total}</h1>
+    return (
+      <Container>
+        <div className={totalClass}>
+          <h1>Bank Account Total: {total}</h1>
         </div>
-            {transactionsData &&
-            transactionsData.map((transaction) => (
-                <div key={transaction.id}>
+        {transactionsData.length > 0 && (
+          <Table bordered hover>
+            <thead>
+              <tr>
+                <th>Item Name</th>
+                <th>Amount</th>
+                <th>Date</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              {transactionsData.map((transaction) => (
+                <tr key={transaction.id}>
+                  <td>
                     <Link to={`/transactions/${transaction.id}`}>
-                    {transaction.item_name} 
+                      {capitalizeWords(transaction.item_name)}
                     </Link>
-                    {transaction.amount}
-                    {transaction.date}
-                    </div>
-            ))}
-        </>
-      )
+                  </td>
+                  <td>{transaction.amount}</td>
+                  <td>{transaction.date}</td>
+                  <td>
+                    <Link to={`/transactions/${transaction.id}/edit`}>Edit</Link>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </Table>
+        )}
+      </Container>
+    );
 }

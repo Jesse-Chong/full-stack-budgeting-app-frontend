@@ -42,12 +42,15 @@ export default function NewTransactionEntry() {
   };
 
   return (
+    <>
+    <h1 className="text-center" style={{ background: '#333', color: 'white', padding: '10px' }} >New</h1>
+    <div className="d-flex justify-content-center align-items-center">
     <div className="NewTransaction">
-      <h1>New</h1>
       <Card className="border-5">
         <Card.Body>
           <form onSubmit={handleSubmit}>
-            <label htmlFor="item_name">Item Name:</label>
+            <label htmlFor="item_name">Item Name</label>
+            <br />
             <input
               id="item_name"
               value={formTransactionData.item_name}
@@ -58,6 +61,7 @@ export default function NewTransactionEntry() {
             />
             <br />
             <label htmlFor="amount">Amount:</label>
+            <br />
             <input
               id="amount"
               value={formTransactionData.title}
@@ -68,6 +72,7 @@ export default function NewTransactionEntry() {
             />
             <br />
             <label htmlFor="date">date:</label>
+            <br />
             <input
               id="date"
               value={formTransactionData.date}
@@ -78,6 +83,7 @@ export default function NewTransactionEntry() {
             />
             <br />
             <label htmlFor="from">From:</label>
+            <br />
             <input
               id="from"
               value={formTransactionData.from}
@@ -88,14 +94,16 @@ export default function NewTransactionEntry() {
             />
             <br />
             <br />
-            <button type="submit">Submit</button>
+            <button className="btn btn-primary" type="submit">Submit</button>
           </form>
           <br />
           <Link to="/transactions">
-            <button>Nevermind, take me back!</button>
+            <button className="btn btn-warning">Nevermind, take me back!</button>
           </Link>
         </Card.Body>
       </Card>
     </div>
+    </div>
+    </>
   );
 }

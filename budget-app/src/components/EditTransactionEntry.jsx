@@ -60,12 +60,15 @@ export default function EditTransactionEntry() {
   };
 
   return (
+    <>
+    <h1 className="text-center" style={{ background: '#333', color: 'white', padding: '10px' }} >Edit</h1>
+    <div className="d-flex justify-content-center align-items-center">
     <div className="EditTransactionEntry">
-      <h1> Edit </h1>
       <Card className="border-5">
         <Card.Body>
           <form onSubmit={handleSubmit}>
-            <label htmlFor="item-name">Item's Name:</label>
+            <label htmlFor="item-name">Item's Name</label>
+            <br />
             <input
               id="item_name"
               value={transactionsData.item_name}
@@ -75,7 +78,8 @@ export default function EditTransactionEntry() {
               required
             />
             <br />
-            <label htmlFor="amount">Amount:</label>
+            <label htmlFor="amount">Amount</label>
+            <br />
             <input
               id="amount"
               value={transactionsData.amount}
@@ -85,7 +89,8 @@ export default function EditTransactionEntry() {
               required
             />
             <br />
-            <label htmlFor="date">Date:</label>
+            <label htmlFor="date">Date</label>
+            <br />
             <input
               id="date"
               value={transactionsData.date}
@@ -95,7 +100,8 @@ export default function EditTransactionEntry() {
               required
             />
             <br />
-            <label htmlFor="from">From:</label>
+            <label htmlFor="from">From</label>
+            <br />
             <input
               id="from"
               value={transactionsData.from}
@@ -106,14 +112,16 @@ export default function EditTransactionEntry() {
             />
             <br />
             <br />
-            <button type="submit">Submit</button>
+            <button className="btn btn-primary" type="submit">Submit</button>
           </form>
           <br />
           <Link to="/transactions">
-            <button>Nevermind, take me back!</button>
+            <button className="btn btn-warning">Nevermind, take me back!</button>
           </Link>
         </Card.Body>
       </Card>
     </div>
+    </div>
+    </>
   );
 }

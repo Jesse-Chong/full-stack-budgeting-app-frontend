@@ -1,5 +1,15 @@
 import { useState, useEffect } from "react";
+import { Card } from 'react-bootstrap';
 import { useParams, useNavigate } from "react-router-dom";
+
+function capitalizeWords(string) {
+  return string
+    .split(' ')
+    .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(' ');
+}
+
+module.export = {capitalizeWords}
 
 const deleteTransaction = async (id) => {
     try {
@@ -44,19 +54,25 @@ export default function ShowTransaction() {
 
     return (
         <>
+         <h1 className="text-center" style={{ background: '#333', color: 'white', padding: '10px' }} >Full Details</h1>
+         <div className="d-flex justify-content-center align-items-center h-100">
+        <Card className="border-5">
+  <Card.Body className="text-center p-3">
+    {transactionsData && (
+      <>
+        <p>{capitalizeWords(item_name)}</p>
+        <p>Amount: {amount}</p>
+        <p>Date: {date}</p>
+        <p>From: {capitalizeWords(from)}</p>
         <div>
-            {transactionsData && (
-                 <>
-                <h1>Full Details</h1>
-                <p>{item_name}</p>
-                <p>{amount}</p>
-                <p>{date}</p>
-                <p>{from}</p>
-                <button onClick={() => navigate('/transactions')}>Back</button>
-                <button onClick={handleDelete}>Complete Erasure</button>
-                <button onClick={() => navigate(`/transactions/${id}/edit`)}>Edit</button>
-                </>
-            )}
+          <button className="btn btn-warning me-2" onClick={() => navigate('/transactions')}>Back</button>
+          <button className="btn btn-danger me-2" onClick={handleDelete}>Complete Erasure</button>
+          <button className="btn btn-primary" onClick={() => navigate(`/transactions/${id}/edit`)}>Edit</button>
+        </div>
+      </>
+    )}
+  </Card.Body>
+</Card>
             </div>
             </>
     )
