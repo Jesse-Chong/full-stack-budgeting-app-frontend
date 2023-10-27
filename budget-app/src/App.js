@@ -29,7 +29,6 @@ function App() {
           </Navbar>
           <Routes>
             <Route path="/transactions" element={<TransactionIndex />} />
-            <Route path="/transactions/:id" element={<TransactionIndex/>} />
             <Route path="/transactions/new" element={<NewTransactionEntry />} />
             <Route path="/transactions/:id" element={<ShowTransaction />} />
             <Route path="/transactions/:id/edit" element={<EditTransactionEntry />} />

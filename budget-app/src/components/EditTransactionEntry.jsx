@@ -89,7 +89,7 @@ export default function EditTransactionEntry() {
             <input
               id="date"
               value={transactionsData.date}
-              type="text"
+              type="date"
               onChange={handleTextChange}
               placeholder="date"
               required

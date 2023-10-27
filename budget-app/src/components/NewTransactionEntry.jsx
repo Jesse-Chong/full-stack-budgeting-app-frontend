@@ -17,13 +17,14 @@ export default function NewTransactionEntry() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    const formattedDate = new Date(formTransactionData.date).toLocaleDateString();
     try {
       const response = await fetch("http://localhost:1111/transactions", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(formTransactionData),
+        body: JSON.stringify({ ...formTransactionData, date: formattedDate }),
       });
   
       if (response.ok) {
@@ -70,7 +71,7 @@ export default function NewTransactionEntry() {
             <input
               id="date"
               value={formTransactionData.date}
-              type="number"
+              type="date"
               onChange={handleTextChange}
               placeholder="date"
               required
