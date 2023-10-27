@@ -28,10 +28,10 @@ function App() {
             </Nav>
           </Navbar>
           <Routes>
-            <Route path='/' element={<TransactionIndex />} />
-            <Route path="/transactions" element={<TransactionIndex/>} />
-            <Route path="/transactions/:id" element={<ShowTransaction/>} />
+            <Route path="/transactions" element={<TransactionIndex />} />
+            <Route path="/transactions/:id" element={<TransactionIndex/>} />
             <Route path="/transactions/new" element={<NewTransactionEntry />} />
+            <Route path="/transactions/:id" element={<ShowTransaction />} />
             <Route path="/transactions/:id/edit" element={<EditTransactionEntry />} />
           </Routes>
       </div>
