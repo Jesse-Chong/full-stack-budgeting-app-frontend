@@ -49,12 +49,10 @@ export default function TransactionIndex() {
     } else {
       totalClass = "green";
     }
-  
-
 
     return (
       <Container>
-        <div className={totalClass}>
+        <div className={`${totalClass} text-center bg-light`}>
           <h1>Bank Account Total: {total}</h1>
         </div>
         {transactionsData.length > 0 && (
