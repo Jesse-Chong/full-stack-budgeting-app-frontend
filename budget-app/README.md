@@ -1,72 +1,40 @@
-# Getting Started with Create React App
+💰 Full Stack Budgeting App 💰
+Back-end repo : https://github.com/Jesse-Chong/full-stack-budgeting-app-backend
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Background css template : https://dev.to/webdeasy/30-awesome-css-background-patterns-dpl
+(Name: Japanese Cube, Author: Tankred)
 
-## Available Scripts
+Excalidraw is in the public folder.
 
-In the project directory, you can run:
+Trello link : https://trello.com/b/Jg6eKbbA/full-stack-budgeting-app
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+(1) NavBar
+* The NavBar allows me to navigate to the index, new entry or statistics page.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+(2) Index Page
+* I can see an organized list of debits or credits I manually put in, along with the date, and item name.
+* On top of the page I can see my total bank account from subtracting the debit and credit.
 
-### `npm test`
+(3) New Page
+* I can click on new in the navbar to take me to a form that lets me create a new transaction.
+* Once a transaction is created, I am shown the full details of what I created.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+(4) Show Page / delete button
+* I can see full details of a single item along with having the option to delete, edit or go back.
 
-### `npm run build`
+(5) Edit Page
+* When I click on edit next to an item I can see a form that is pre-filled with the same information of that particular item I clicked along with being able to update it.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+(6) Account Total
+* CSS changes depending on the amount, used a greenish color if the bank account total is above 100, used a yellowish color if the bank account total is between 0 and 100 and a reddish color if the bank account total is less than 0. 
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+(7) UX/UI
+* Used bootstrap to style every page, form, and button, along with having every page fit into smaller screens.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+(8) Stretch Goals
+* Used date object for human-readable format.
+* Added a statistics page showing percentage of total money spent based on the total debit in the account.
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-
-Stretch goal : Human readable date and proper capitalization. 
+(9) Chart inside statistics (Bonus Feature for the future)
+* Use a graph to visually show how much $ I spend per week using the total amount of dollars debited and credited per week.
